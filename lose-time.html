@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Over &lt;3</title>
+    <link rel="stylesheet" href="modals.css" />
+  </head>
+  <body>
+    <div class="lose-time-page">
+      <h1 class="customfont">Game Over!</h1>
+      <p class="customfont" id="base-text">Oh no! È scaduto il tempo...</p>
+      <div class="buttons-container">
+        <div class="retry-container" id="retry-container">
+          <p class="customfont" id="retry-text">Riprova :&#41;</p>
+          <img
+            id="retry-button"
+            src="assets/Start button brown.PNG"
+            alt="Retry button"
+          />
+        </div>
+        <div class="reset-container" id="reset-container">
+          <p class="customfont" id="reset-text">Reset</p>
+          <img
+            id="reset-button"
+            src="assets/Start button brown.PNG"
+            alt="Reset button"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="modals.js"></script>
+  </body>
+</html>

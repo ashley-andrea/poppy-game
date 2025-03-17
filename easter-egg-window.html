@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Found the easter egg! &lt;3</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div class="egg-title-bar">
+      <p class="title-text customfont">Found the easter egg! &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="close-easter"
+          src="assets/Close button.PNG"
+          alt="Close easter egg page button"
+        />
+      </div>
+    </div>
+    <div class="easter-egg-page">
+      <h1 class="customfont">Complimenti!</h1>
+      <div class="easter-egg-content">
+        <img src="assets/Easter egg.GIF" alt="Easter egg gif" />
+        <p class="customfont">
+          Hai trovato l'easter egg! Vuoi scoprire il tuo premio?
+        </p>
+      </div>
+    </div>
+    <div id="corner-trigger-area"></div>
+    <div id="secret-trigger"></div>
+    <script src="easter-egg.js"></script>
+  </body>
+</html>

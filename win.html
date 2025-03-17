@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulations &lt;3</title>
+    <link rel="stylesheet" href="modals.css" />
+  </head>
+  <body>
+    <div class="win-page">
+      <h1 class="customfont">Vittoria!</h1>
+      <p class="customfont" id="base-text">
+        Congratulazioni! Hai raccolto tutti i fiorellini!
+      </p>
+      <div class="continue-container" id="continue-container">
+        <p class="customfont" id="continue-text">Continua :&#41;</p>
+        <img
+          id="continue-button"
+          src="assets/Start button brown.PNG"
+          alt="Continue button"
+        />
+      </div>
+    </div>
+    <script src="modals.js"></script>
+  </body>
+</html>

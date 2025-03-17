@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Found the bouquet! &lt;3</title>
+    <link rel="stylesheet" href="default-bouquet.css" />
+  </head>
+  <body>
+    <div class="custom-title-bar">
+      <p class="title-text customfont">Happy Valentine's! &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="minimize-def"
+          src="assets/Minimize button.PNG"
+          alt="Minimize button"
+        />
+        <img id="close-game" src="assets/Close button.PNG" alt="Close button" />
+      </div>
+    </div>
+    <div class="default-bouquet-page">
+      <div class="default-bouquet-content">
+        <img
+          src="assets/Default bouquet total.PNG"
+          alt="Default bouquet image"
+        />
+        <div class="text-blocks">
+          <h1 class="customfont">Ta-daaahh!!</h1>
+          <p class="customfont">
+            Uno specialissimo bouquet di papaveri per una specialissima persona!
+          </p>
+          <p class="customfont">
+            Buon San Valentino in mega ritardo hehe :&#41;
+          </p>
+          <p id="love" class="customfont">TI AMO!! &lt;333</p>
+        </div>
+      </div>
+    </div>
+    <script src="bouquet-pages.js"></script>
+  </body>
+</html>

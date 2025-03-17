@@ -1,0 +1,118 @@
+/* Modal styles for win/lose interactive windows */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #DE9E9E;
+    overflow: hidden;
+}
+    
+@font-face {
+    font-family: "My Custom Font";
+    src: url(assets/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf)
+      format("truetype");
+}
+.customfont {
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.win-page,
+.lose-time-page,
+.lose-wrong-flower-page {
+    text-align: center;
+}
+
+h1 {
+    color: #7A0E0E;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#base-text {
+    color: #7A0E0E;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/* Win page */
+.continue-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.continue-container:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+#continue-text {
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #472E1F; 
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    width: 110px;
+    pointer-events: none; /* Keeps text from interfering with clicks */
+}
+
+#continue-button {
+    width: 175px;
+    height: auto;
+    display: block;
+    margin-bottom: 15vh;
+    pointer-events: none; /* Ensures wrapper gets the hover/click */
+}
+
+
+/* Lose pages */
+.buttons-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.reset-container,
+.retry-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.reset-container:hover,
+.retry-container:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+#reset-text,
+#retry-text {
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #472E1F; 
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    width: 110px;
+    pointer-events: none; /* Keeps text from interfering with clicks */
+}
+
+#reset-button,
+#retry-button {
+    width: 160px;
+    height: auto;
+    display: block;
+    margin-bottom: 15vh;
+    pointer-events: none; /* Ensures wrapper gets the hover/click */
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ready to start? &lt;3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="custom-title-bar">
+      <p class="title-text customfont">Ready to start? &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="close-window"
+          src="assets/Close button.PNG"
+          alt="Close window button"
+        />
+      </div>
+    </div>
+    <div class="confirmation-page">
+      <div class="text-block3">
+        <p class="customfont">
+          <span class="text-with-icon"
+            >Pronto per cominciare?
+            <img
+              class="poppy-icon"
+              src="assets/Poppy frontal red.PNG"
+              alt="Pixel poppy frontal"
+            />
+          </span>
+        </p>
+      </div>
+      <div class="confirm-wrapper" id="confirm-wrapper">
+        <p class="confirm-text customfont">Gioca!</p>
+        <img
+          id="confirm-button"
+          src="assets/Start button brown.PNG"
+          alt="Confirmation button"
+        />
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>

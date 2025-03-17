@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose your colors! &lt;3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="custom-title-bar">
+      <p class="title-text customfont">Choose your colors! &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="minimize-btn"
+          src="assets/Minimize button.PNG"
+          alt="Minimize button"
+        />
+        <img id="close-btn" src="assets/Close button.PNG" alt="Close button" />
+      </div>
+    </div>
+    <div class="selection-page">
+      <div class="text-block2">
+        <p class="customfont">Scegli i tuoi colori!</p>
+      </div>
+      <div id="color-counter-container">
+        <span>Rosso: <span id="red-count">0</span></span>
+        <span>Giallo: <span id="yellow-count">0</span></span>
+        <span>Blu: <span id="blue-count">0</span></span>
+        <span>Viola: <span id="purple-count">0</span></span>
+      </div>
+      <div class="images-container">
+        <div class="image-box" data-color="red">
+          <img src="assets/Red heart.PNG" alt="Red Color" />
+          <span class="count-text"></span>
+        </div>
+        <div class="image-box" data-color="yellow">
+          <img src="assets/Yellow heart.PNG" alt="Yellow Color" />
+          <span class="count-text"></span>
+        </div>
+        <div class="image-box" data-color="blue">
+          <img src="assets/Blue heart.PNG" alt="Blue Color" />
+          <span class="count-text"></span>
+        </div>
+        <div class="image-box" data-color="purple">
+          <img src="assets/Purple heart.PNG" alt="Purple Color" />
+          <span class="count-text"></span>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <div class="reset-section">
+          <div class="reset-wrapper disabled">
+            <p class="reset-text customfont">Reset :&#41;</p>
+            <img
+              id="reset-button"
+              src="assets/Start button brown.PNG"
+              alt="Reset button"
+            />
+          </div>
+        </div>
+        <div class="done-section">
+          <div class="button-wrapper disabled">
+            <p class="done-text customfont">Finito! &lt;3</p>
+            <img
+              id="done-button"
+              src="assets/Start button brown.PNG"
+              alt="Done button"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>

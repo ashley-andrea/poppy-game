@@ -1,0 +1,110 @@
+/* Bouquet windows styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #7A0E0E;
+}
+    
+@font-face {
+    font-family: "My Custom Font";
+    src: url(assets/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf)
+      format("truetype");
+}
+.customfont {
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.custom-title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #F9E0CE;
+    color: #7A0E0E;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 1000;
+}
+
+.window-controls {
+    display: flex;
+    gap: 15px;
+    margin-right: 30px;
+}
+  
+.window-controls img {
+    width: 30px; /* Adjust button size */
+    height: auto;
+    cursor: pointer;
+    -webkit-app-region: no-drag; /* Prevents buttons from interfering with drag */
+}
+  
+.window-controls img:hover {
+    opacity: 0.8;
+}  
+
+.bouquet-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px; /* Space below the title bar */
+    padding-bottom: 50px;
+    background-color: #7A0E0E;
+}
+  
+.bouquet-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    max-width: 80%;
+    gap: 60px;
+}
+  
+.bouquet-content img {
+    width: 430px;
+    height: auto;
+    object-position: center;
+    cursor: pointer;
+}
+
+#love {
+    font-size: 46px;
+    color: #F9E0CE;
+}
+
+.bouquet-content p{
+    font-size: 34px;
+    max-width: 480px;
+    text-align: center;
+    color: #DE9E9E;
+}
+
+@keyframes flowerSpawn {
+    from {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(var(--rotation));
+        opacity: 1;
+    }
+}
+
+.flower {
+    position: absolute;
+    width: 60px;
+    cursor: grab;
+    opacity: 0; /* Initially invisible */
+    animation: flowerSpawn 0.8s ease-out forwards;
+    transition: transform 0.2s ease-out; /* Smooth movement when dragging */
+}

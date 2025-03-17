@@ -1,0 +1,299 @@
+/* CHECK! When resizing the windows, text blocks on top of images do not exactly move together! */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #DE9E9E;;
+}
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url(assets/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf)
+      format("truetype");
+}
+p.customfont {
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.custom-title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Adjust height if needed */
+    background-color: #F9E0CE; /* Match your theme */
+    color: #7A0E0E;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 1000; /* Ensures it's above other elements */
+    -webkit-app-region: drag; /* Allows dragging the window */
+}
+
+.window-controls {
+    display: flex;
+    gap: 15px;
+    margin-right: 30px;
+}
+
+.window-controls img {
+    width: 30px; /* Adjust button size */
+    height: auto;
+    cursor: pointer;
+    -webkit-app-region: no-drag; /* Prevents buttons from interfering with drag */
+}
+
+.window-controls img:hover {
+    opacity: 0.8;
+}
+
+
+/* First page */
+.first-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #7A0E0E;
+}
+
+.text-block p {
+    font-size: 50px;
+    font-weight: 500;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    color: #F9E0CE
+}
+
+.start-wrapper {
+    position: relative;
+    display: flex; /* Align elements horizontally */
+    align-items: center; /* Keep text and GIF vertically aligned */
+    justify-content: center; /* Center everything over the button */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.start-wrapper:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+#start-button {
+    width: 350px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    pointer-events: none;
+}
+
+.start-text {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: #7A0E0E; 
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    pointer-events: none; /* Keeps text from interfering with clicks */
+}
+
+.rotating-heart {
+    position: absolute;
+    width: 230px; /* Adjust size as needed */
+    height: auto;
+    margin-left: 145px; /* Push it to the right of the text */
+    margin-bottom: 56px;
+    pointer-events: none;
+}
+
+
+/* Selection (second) page */
+.selection-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Distribute space */
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    box-sizing: border-box;
+    gap: 8vh;
+}
+
+.text-block2 p {
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 0;
+    color: #7A0E0E;
+}
+
+#color-counter-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 26px;
+    font-family: "My Custom Font", Verdana, Tahoma;
+    color: #7A0E0E;
+}
+  
+.images-container {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.image-box {
+    position: relative;
+    cursor: pointer;
+    display: inline-block; /* So they line up nicely */
+}
+
+.image-box img {
+    width: 150px;
+    height: 150px;
+    border: 0px solid transparent;
+    border-radius: 0px;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.image-box img:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+.count-text {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers perfectly */
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: opacity 0.2s;
+    font-family: "My Custom Font", Verdana, Tahoma;
+    font-size: 30px; /* Adjust as needed */
+    font-weight: bold;
+    pointer-events: none; /* So clicks go through to the image */
+}
+
+.buttons-container {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.reset-wrapper, 
+.button-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.reset-wrapper:hover,
+.button-wrapper:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+.reset-wrapper.disabled, 
+.button-wrapper.disabled { 
+    opacity: 0.5;
+    pointer-events: none;
+    transform: none !important; /* Prevent scaling */
+}
+
+.reset-wrapper.disabled:hover, 
+.button-wrapper.disabled:hover {
+    transform: none; /* Prevent hover enlarging */
+}
+
+.reset-text,
+.done-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #472E1F; 
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    pointer-events: none; /* Keeps text from interfering with clicks */
+}
+
+#reset-button,
+#done-button {
+    width: 270px;
+    height: auto;
+    display: block;
+    pointer-events: none; /* Ensures wrapper gets the hover/click */
+}
+
+
+/* Confirmation window */
+.confirmation-page {
+    text-align: center;
+}
+
+.text-block3 {
+    text-align: center; /* Centers text and image as a unit */
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30vh;
+    color: #7A0E0E;
+}
+
+.text-with-icon {
+    display: inline-block; /* Ensures text and image stay together */
+}
+
+.poppy-icon {
+    width: 50px;
+    height: auto;
+    vertical-align: middle; /* Aligns image with text baseline */
+    margin-left: 10px; /* Adds spacing between text and image */
+}
+
+.confirm-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.confirm-wrapper:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+.confirm-text {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #472E1F; 
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    pointer-events: none; /* Keeps text from interfering with clicks */
+}
+
+#confirm-button {
+    width: 175px;
+    height: auto;
+    display: block;
+    margin-bottom: 15vh;
+    pointer-events: none; /* Ensures wrapper gets the hover/click */
+}

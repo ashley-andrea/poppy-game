@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+    font-src 'self';
+    connect-src 'self';
+"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's play! &lt;3</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div class="custom-title-bar">
+      <p class="title-text customfont">Let's play! &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="minimize-game"
+          src="assets/Minimize button.PNG"
+          alt="Minimize button"
+        />
+        <img id="close-game" src="assets/Close button.PNG" alt="Close button" />
+      </div>
+    </div>
+    <div class="game-page">
+      <div id="pause-btn">
+        <img
+          id="pause-img"
+          src="assets/Wood pause button.PNG"
+          alt="Pause button"
+        />
+        <span id="pause-text">Pausa</span>
+      </div>
+      <img
+        id="easter-egg"
+        src="assets/Easter egg.PNG"
+        alt="Hidden easter egg"
+      />
+      <div id="color-counter-container">
+        <div id="color-counters" class="color-counter customfont">
+          <p>Raccogli:</p>
+          <p id="counter-red">Rosso: 0</p>
+          <p id="counter-yellow">Giallo: 0</p>
+          <p id="counter-blue">Blu: 0</p>
+          <p id="counter-purple">Viola: 0</p>
+        </div>
+        <img
+          id="woodpost-image"
+          src="assets/Wood sign post.PNG"
+          alt="Wood signpost"
+        />
+      </div>
+
+      <div id="grass-container">
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+        <img class="grass" src="assets/Grass.PNG" alt="Grass" />
+      </div>
+
+      <div id="game-container">
+        <canvas id="gameCanvas" width="1000" height="700"></canvas>
+        <div id="game-status">
+          <span id="remaining-elements">Tempo rimasto: </span>
+          <span id="time-left">3:00</span>
+        </div>
+      </div>
+      <div id="modal" class="modal hidden">
+        <div class="modal-content">
+          <h1 id="modal-title"></h1>
+          <p id="modal-message"></p>
+          <div id="modal-buttons"></div>
+        </div>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>

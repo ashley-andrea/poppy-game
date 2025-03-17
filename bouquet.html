@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Found the bouquet! &lt;3</title>
+    <link rel="stylesheet" href="bouquet.css" />
+  </head>
+  <body>
+    <div class="custom-title-bar">
+      <p class="title-text customfont">Happy Valentine's! &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="minimize-bouquet"
+          src="assets/Minimize button.PNG"
+          alt="Minimize button"
+        />
+        <img id="close-game" src="assets/Close button.PNG" alt="Close button" />
+      </div>
+    </div>
+    <div class="bouquet-page">
+      <div id="bouquet-content" class="bouquet-content">
+        <img src="assets/Basket top view.PNG" alt="Basket from top image" />
+        <div class="text-blocks">
+          <p class="customfont">In leggerissimo ritardo, ma</p>
+          <p id="love" class="customfont">
+            BUON SAN VALENTINO AMOREEEE!!! &lt;333
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="bouquet-pages.js"></script>
+  </body>
+</html>

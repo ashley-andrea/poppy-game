@@ -1,0 +1,273 @@
+/* Game page styles */
+body {
+  margin: 0;
+  background-color: #F9E0CE;
+  overflow: hidden;
+}
+  
+@font-face {
+  font-family: "My Custom Font";
+  src: url(assets/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf)
+    format("truetype");
+}
+p.customfont {
+  font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.custom-title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /* Adjust height if needed */
+  background-color: #AD6F6F; /* Match your theme */
+  color: #F9E0CE;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000; /* Ensures it's above other elements */
+  -webkit-app-region: drag; /* Allows dragging the window */
+}
+
+.window-controls {
+  display: flex;
+  gap: 15px;
+  margin-right: 30px;
+}
+
+.window-controls img {
+  width: 30px; /* Adjust button size */
+  height: auto;
+  cursor: pointer;
+  -webkit-app-region: no-drag; /* Prevents buttons from interfering with drag */
+}
+
+.window-controls img:hover {
+  opacity: 0.8;
+}  
+
+#pause-btn {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 8px;
+  z-index: 1;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#pause-btn:hover {
+    transform: scale(1.1); /* Grows by 10% on hover */
+}
+
+#pause-img {
+  width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+#pause-text {
+  color: #472E1F;
+  font-family: "My Custom Font", Verdana, Tahoma;
+  font-size: 27px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 47%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+}
+
+#easter-egg {
+  position: absolute;
+  bottom: 2px; /* Low enough to be 'hidden' */
+  right: 83px;  /* Adjust position near signpost */
+  width: 35px; /* Small to remain unnoticed */
+  z-index: 1; /* Behind everything */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#easter-egg:hover {
+  transform: scale(1.2) rotate(15deg); /* Reveal effect */
+  cursor: pointer;
+}
+
+#color-counter-container {
+  position: absolute;
+  bottom: 0%; /* Above the grass */
+  right: 20px;  /* Aligned to the right */
+  width: 180px;
+  height: auto;
+  text-align: center;
+  pointer-events: none;
+}
+
+#color-counters {
+  position: absolute;
+  bottom: 50%; /* Moves the text towards the middle of the image */
+  left: 50%;
+  transform: translate(-50%, 50%); /* Centers text over the image */
+  width: 100%;
+  text-align: center;
+  font-family: "My Custom Font", Verdana, Tahoma;
+  color: #472E1F;
+  background: none; /* Ensure no background */
+  z-index: 10;
+}
+
+#color-counters p {
+  margin: 2px 0; /* Reduce vertical margin */
+  line-height: 1.3; /* Adjust line height for better spacing */
+  font-size: 24px; /* Slightly adjust size if needed */
+  font-weight: 600;
+}
+
+#woodpost-image {
+  width: 180px; /* Adjust as needed */
+  height: auto;
+  display: block;
+  margin-top: 60px;
+  z-index: 4; /* Behind grass */
+  position: relative;
+  z-index: 5;
+  opacity: 0.9;
+}
+
+#grass-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* Adjust as needed */
+  display: flex;
+  justify-content: space-between;
+  z-index: 10; /* Grass in the foreground */
+  pointer-events: none;
+}
+
+.grass {
+  width: calc(100% / 8); /* Ensure 6 images fit perfectly */
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+#game-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #F9E0CE;
+}
+
+#gameCanvas {
+  position: absolute;
+  top: 90px; /* Avoid title bar and timer */
+  left: 1%;
+  width: 78%; /* Adjust to fit left of counters */
+  height: calc(100vh - 100px); /* Ensure full height but avoid bottom overlap */
+  z-index: 1; /* Behind counters and grass */
+}
+  
+#game-status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 26px;
+  font-family: "My Custom Font", Verdana, Tahoma;
+  color: #7A0E0E;
+  margin-top: 40px;
+}
+
+
+/* Easter egg window styles */
+.egg-title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #F9E0CE;
+  color: #7A0E0E;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.easter-egg-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px; /* Space below the title bar */
+  padding-bottom: 50px;
+  background-color: #AD6F6F;
+}
+
+.easter-egg-page h1 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  color: #FFE291;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.easter-egg-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  gap: 20px;
+}
+
+.easter-egg-content img {
+  width: 110px; /* Set the desired width */
+  height: 160px; /* Set the desired height */
+  object-fit: cover; /* Crop the GIF to fill the area */
+  object-position: center; /* Center the GIF */
+  transform: scale(1.6); /* Zoom in by 30% */
+}
+
+.easter-egg-content p {
+  font-size: 24px;
+  max-width: 160px;
+  text-align: center;
+  color: #FFFFEB;
+}
+
+#corner-trigger-area {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 30px; /* Define the hover-sensitive area */
+  height: 30px;
+  background: transparent; /* Invisible area */
+  cursor: pointer;
+}
+
+#secret-trigger {
+  position: fixed;
+  bottom: 0px;
+  right: -30px; /* Start outside the screen */
+  width: 30px;
+  height: 30px;
+  background-color: #7A0E0E; 
+  clip-path: polygon(100% 0, 0 100%, 100% 100%); /* Makes it a triangle */
+  opacity: 0; /* Hidden by default */
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+#corner-trigger-area:hover + #secret-trigger {
+  opacity: 0.3;
+  right: 0px; /* Slide in only when hovering over the bottom-right corner */
+}

@@ -1,0 +1,110 @@
+/* Bouquet windows styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #AD6F6F;
+}
+    
+@font-face {
+    font-family: "My Custom Font";
+    src: url(assets/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf)
+      format("truetype");
+}
+.customfont {
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.custom-title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #F9E0CE;
+    color: #7A0E0E;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 1000;
+}
+
+.window-controls {
+    display: flex;
+    gap: 15px;
+    margin-right: 30px;
+}
+  
+.window-controls img {
+    width: 30px; /* Adjust button size */
+    height: auto;
+    cursor: pointer;
+    -webkit-app-region: no-drag; /* Prevents buttons from interfering with drag */
+}
+  
+.window-controls img:hover {
+    opacity: 0.8;
+}  
+
+.default-bouquet-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px; /* Space below the title bar */
+    padding-bottom: 50px;
+    background-color: #AD6F6F;
+}
+  
+.default-bouquet-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    max-width: 80%;
+    gap: 60px;
+}
+
+.default-bouquet-page h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: #FFE291;
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+ 
+.default-bouquet-content img {
+    width: 430px;
+    height: auto;
+    object-position: center;
+    cursor: pointer;
+}
+
+@keyframes shake-grow {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(5deg) scale(1.05); }
+    50% { transform: rotate(-5deg) scale(1.07); }
+    75% { transform: rotate(5deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+.default-bouquet-content img:hover {
+    animation: shake-grow 1s ease-in-out 3; /* Stops after 3 cycles */
+}
+
+  
+#love {
+    font-size: 36px;
+}
+
+.default-bouquet-content p {
+    font-size: 30px;
+    max-width: 510px;
+    text-align: center;
+    color: #FFFFEB;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Valentine's! &lt;3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="custom-title-bar">
+      <p class="title-text customfont">Hi Love &lt;3</p>
+      <div class="window-controls">
+        <img
+          id="minimize-btn"
+          src="assets/Minimize button.PNG"
+          alt="Minimize button"
+        />
+        <img id="close-btn" src="assets/Close button.PNG" alt="Close button" />
+      </div>
+    </div>
+    <div class="first-page">
+      <div class="text-block">
+        <p class="customfont">
+          Sfortunatamente i papaveri non fioriscono a febbraio... ma possiamo
+          renderli speciali quanto vogliamo!
+        </p>
+      </div>
+      <div class="start-wrapper" id="start-wrapper">
+        <p class="start-text customfont">Inizia!</p>
+        <img
+          class="rotating-heart"
+          src="assets/Rotating heart.GIF"
+          alt="Rotating heart gif"
+        />
+        <img
+          id="start-button"
+          src="assets/Start button rose 1.png"
+          alt="Start button"
+        />
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>
